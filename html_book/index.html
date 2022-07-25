@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HTML-справочник - элементы по алфавиту и с описанием по разделам</title>
+   <link rel="shortcut icon" href="favicon.ico"/>
+   <meta name="description" content="Справочник HTML по тегам" />
+   <meta name="author" content="Елена Назарова HTML5BOOK" />
+  
+   <style>
+      @import url("css-family=Roboto+Slab-300-Roboto-400,400i,700,700i&subset=cyrillic.css")/*tpa=https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:400,400i,700,700i&subset=cyrillic*/;
+      @import "css-family=Varela.css"/*tpa=https://fonts.googleapis.com/css?family=Varela*/;
+      @import url("css-family=Raleway.css")/*tpa=https://fonts.googleapis.com/css?family=Raleway*/;
+
+      * {
+         box-sizing: border-box;
+         margin: 0;
+      }
+
+      body {
+         font-family: Raleway, Helvetica, sans-serif;
+         background: white;
+         line-height: 1.5;
+         color: #707070;
+      }
+
+      a {
+         text-decoration: none;
+         transition: .3s linear;
+      }
+
+      .draft {
+         opacity: .3;
+         cursor: default;
+      }
+
+      .navigation {
+         padding: 0 20px;
+      }
+
+      .logo {
+         margin-bottom: 30px;
+      }
+
+      .header-logo {
+         display: table;
+         margin: 0 auto;
+         color: #1D2E4C;
+         font-size: 40px;
+         line-height: 1;
+         font-family: 'Varela', sans-serif;
+         font-weight: bold;
+      }
+
+      .header-logo span {
+         display: block;
+         font-size: 16px;
+         letter-spacing: 10px;
+         position: relative;
+         text-align: right;
+         margin-right: -7px;
+      }
+
+      .header-logo span:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         background: #37E2D5;
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         left: 3px;
+         box-shadow: 12px 6px #590696, 24px 0px #C70A80, 36px 6px #FBCB0A;
+         transition: .4s linear;
+      }
+
+      .header-logo:hover span:before {
+         top: 6px;
+         box-shadow: 12px -6px #590696, 24px 0px #C70A80, 36px -6px #FBCB0A;
+      }
+
+      .sidebar h1 {
+         font-size: 18px;
+         font-weight: 700;
+         text-align: center;
+         margin: 30px 0;
+         line-height: 1;
+      }
+
+      .sidebar h2 {
+         font-size: 14px;
+         padding: 6px 12px 6px 8px;
+         border-bottom: 1px solid #CDD0D7;
+         background: white;
+         position: relative;
+      }
+
+      .sidebar h2:after {
+         content: '';
+         position: absolute;
+         right: 6px;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 10px;
+         height: 10px;
+         border-radius: 100%;
+         background: rgba(69, 77, 88, .4);
+      }
+
+      h2 a {
+         color: #4D5362;
+      }
+
+      .sidebar {
+         padding: 30px 0;
+         color: #1D2E4C;
+         background: #F8F9FB;
+      }
+
+
+      .sidebar ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      .sidebar ul a {
+         color: #4D5362;
+         display: block;
+         padding: 7px 15px;
+         font-size: 12px;
+      }
+
+      .navigation a {
+         display: block;
+      }
+
+      .navigation a:hover {
+         color: #6bcfcb;
+      }
+
+      .sidebar::-webkit-scrollbar {
+         width: 16px;
+         background-color: #F5F5F5;
+      }
+
+      .sidebar::-webkit-scrollbar-thumb {
+         border: 5px solid transparent;
+         background-clip: content-box;
+         border-radius: 10px;
+         background-color: rgba(69, 77, 88, .4);
+      }
+
+      .sidebar::-webkit-scrollbar-track {
+         background-color: #F5F5F5;
+      }
+
+      body::-webkit-scrollbar {
+         width: 16px;
+         background-color: rgba(255, 255, 255, 0);
+      }
+
+      body::-webkit-scrollbar-thumb {
+         height: 100px;
+         background-color: #454D58;
+         border: 5px solid transparent;
+         background-clip: content-box;
+         border-radius: 10px;
+      }
+
+      body::-webkit-scrollbar-track {
+         background-color: rgba(255, 255, 255, 0);
+      }
+
+      .content {
+         padding: 0 20px;
+      }
+
+      .content h2 {
+         font-size: 26px;
+         color: #373D44;
+         margin: 30px 0;
+         line-height: 1;
+      }
+
+      .content h3 {
+         background: #E7EDF5;
+         padding: 1px 6px 2px;
+         border-radius: 3px;
+         font-weight: 400;
+         color: #454D58;
+         margin-bottom: 6px
+      }
+
+      .content h4 {
+         padding: 6px 2px;
+         font-weight: 400;
+         color: #454D58;
+      }
+
+      .content>ul,
+      .ref>ul {
+         list-style: none;
+         padding: 0;
+         margin-bottom: 30px;
+      }
+
+      .content a {
+         display: inline-block;
+         padding: 6px;
+         color: #454D58;
+         transition: .2s linear;
+      }
+
+      .content a:hover {
+         color: #6bcfcb;
+      }
+
+      .ref kbd {
+         font-size: 16px;
+      }
+
+      .ref span {
+         font-size: 14px;
+      }
+
+      h4~ul li,
+      #media ul li {
+         line-height: 37px;
+      }
+
+      .scroll-top {
+         position: fixed;
+         right: 20px;
+         bottom: 20px;
+         width: 40px;
+         height: 40px;
+         background: #ff541b;
+         text-align: center;
+         cursor: pointer;
+         border-radius: 3px;
+         z-index: 300;
+      }
+
+      .scroll-top:before {
+         content: "\f106";
+         font-family: FontAwesome;
+         color: white;
+         font-size: 20px;
+         line-height: 40px;
+      }
+
+      footer {
+         text-align: center;
+         padding: 20px;
+         border-top: 2px solid whitesmoke;
+         font-size: 14px;
+      }
+
+      footer span {
+         font-size: 20px;
+         color: #fb735b;
+      }
+
+      @media(max-width:767px) {
+         body::-webkit-scrollbar {
+            background-color: #F5F5F5;
+         }
+
+         .content h2 {
+            font-size: 20px;
+         }
+
+         .ref kbd,
+         .content a {
+            font-size: 14px;
+         }
+
+         .ref span {
+            font-size: 12px;
+         }
+      }
+
+      @media(min-width:768px) {
+         body {
+            overflow-y: scroll;
+         }
+
+         .body {
+            padding-left: 350px;
+         }
+
+         .sidebar {
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow: auto;
+            width: 350px;
+         }
+      }
+
+      @media(min-width:768px) and (max-width:949px) {
+         .sidebar {
+            width: 320px;
+         }
+
+         .body {
+            padding-left: 320px;
+         }
+      }
+
+      @media(min-width:950px) {
+
+         .navigation,
+         .content {
+            padding: 0 30px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="sidebar">
+      <div class="logo"><a class="header-logo" href="javascript:if(confirm(%27https://html5book.ru/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol (e.g., gopher).  \n\nDo you want to open it from the server?%27))window.location=%27https://html5book.ru/%27" tppabs="https://html5book.ru/">HTML5<span>BOOK</span></a></div>
+      <h1>HTML-справочник</h1>
+      <div class="navigation">
+
+         <h2>Элементы по разделам</h2>
+         <ul>
+            <li><a href="#part1">1. Элемент документа</a></li>
+            <li><a href="#part2">2. Метаданные документа</a></li>
+            <li><a href="#part3">3. Разделы документа</a></li>
+            <li><a href="#part4">4. Группировка содержимого</a></li>
+            <li><a href="#part5">5. Семантика уровня текста</a></li>
+            <li><a href="#part6">6. Правки документа</a></li>
+            <li><a href="#part7">7. Встраиваемое содержимое</a></li>
+            <li><a href="#part8">8. Ссылки</a></li>
+            <li><a href="#part9">9. Табличные данные</a></li>
+            <li><a href="#part10">10. Формы</a></li>
+            <li><a href="#part11">11. Интерактивные элементы</a></li>
+            <li><a href="#part12">12. Скрипты</a></li>
+         </ul>
+
+
+      </div>
+   </div>
+
+   <div class="body">
+      <div class="content">
+         
+         <h2>Элементы по разделам</h2>
+         <div class="ref" id="part1">
+            <h3><a href="pdf/p1.pdf" target="_blank">1. Элемент документа</a></h3>
+            <ul>
+               <li><kbd>&lt;html&gt; - корневой элемент HTML-документа</kbd></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part2">
+            <h3><a href="pdf/p2.pdf" target="_blank">2. Метаданные документа</a></h3>
+            <ul>
+               <li><kbd>&lt;head&gt;</kbd><span> - раздел HTML-документа, содержащий набор технической информации (метаданных) о текущей веб-странице</span></li>
+               <li><kbd>&lt;title&gt;</kbd><span> - заголовок или название документа (веб-страницы)</span></li>
+               <li><kbd>&lt;base&gt;</kbd><span> - базовый URL документа для парсинга всех относительных URL-адресов на странице, установленных атрибутами src и href</span></li>
+               <li><kbd>&lt;link&gt;</kbd><span> - элемент для создания ссылок на внешние ресурсы и гиперссылок</span></li>
+               <li><kbd>&lt;meta&gt;</kbd><span> - элемент представляет различные виды метаданных, которые не могут быть переданы с использованием элементов &lt;title&gt;, &lt;base&gt;, &lt;link&gt;, &lt;style&gt; и &lt;script&gt;</span></li>
+               <li><kbd>&lt;style&gt;</kbd><span> - элемент для встраивания информацию о стилях в тело HTML-документа</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part3">
+            <h3><a href="pdf/p3.pdf" target="_blank">3. Разделы документа</a></h3>
+            <ul>
+               <li><kbd>&lt;body&gt;</kbd><span> - представляет содержимое документа</span></li>
+               <li><kbd>&lt;article&gt;</kbd><span> - представляет законченное или автономное произведение в документе, странице, приложении или сайте</span></li>
+               <li><kbd>&lt;section&gt;</kbd><span> - представляет общий раздел документа или приложения, группируя тематическое содержимое</span></li>
+               <li><kbd>&lt;nav&gt;</kbd><span> - представляет раздел страницы с навигационными ссылками, который ссылается на другие страницы или части внутри страницы</span></li>
+               <li><kbd>&lt;aside&gt;</kbd><span> - представляет раздел страницы - боковую колонку и состоит из содержимого, косвенно связанного с родительским секционным элементом</span></li>
+               <li><kbd>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; и &lt;h6&gt;</kbd><span> - представляют заголовки для своих разделов</span></li>
+               <li><kbd>&lt;header&gt;</kbd><span> - представляет вводное содержимое для его ближайшего предка</span></li>
+               <li><kbd>&lt;footer&gt;</kbd><span> - представляет нижний колонтитул для его ближайшего предка</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part4">
+            <h3><a href="pdf/p4.pdf" target="_blank">4. Группировка содержимого</a></h3>
+            <ul>
+               <li><kbd>&lt;p&gt;</kbd><span> - представляет абзац</span></li>
+               <li><kbd>&lt;address&gt;</kbd><span> - представляет контактную информацию о человеке или организации</span></li>
+               <li><kbd>&lt;hr&gt;</kbd><span> - представляет тематический разрыв на уровне абзаца</span></li>
+               <li><kbd>&lt;pre&gt;</kbd><span> - представляет блок предварительно отформатированного текста</span></li>
+               <li><kbd>&lt;blockquote&gt;</kbd><span> - представляет содержимое, цитируемое из другого источника</span></li>
+               <li><kbd>&lt;ol&gt;</kbd><span> - представляет упорядоченный список элементов</span></li>
+               <li><kbd>&lt;ul&gt;</kbd><span> - представляет неупорядоченный список элементов</span></li>
+               <li><kbd>&lt;li&gt;</kbd><span> - представляет элемент списка</span></li>
+               <li><kbd>&lt;dl&gt;</kbd><span> - представляет список описаний, состоящий групп термин-описание</span></li>
+               <li><kbd>&lt;dt&gt;</kbd><span> - представляет термин в списке описаний</span></li>
+               <li><kbd>&lt;dd&gt;</kbd><span> - представляет описание в списке описаний</span></li>
+               <li><kbd>&lt;figure&gt;</kbd><span> - представляет автономное содержимое (необязательно с подписью)</span></li>
+               <li><kbd>&lt;figcaption&gt;</kbd><span> - представляет заголовок или легенду для содержимого &lt;figure&gt;</span></li>
+               <li><kbd>&lt;main&gt;</kbd><span> - обрамляет основное уникальное содержимое элемента &lt;body&gt; документа или приложения</span></li>
+               <li><kbd>&lt;div&gt;</kbd><span> - представляет свои дочерние элементы</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part5">
+            <h3><a href="pdf/p5.pdf" target="_blank">5. Семантика уровня текста</a></h3>
+            <ul>
+               <li><kbd>&lt;a&gt;</kbd><span> - представляет гиперссылку или якорь</span></li>
+               <li><kbd>&lt;em&gt;</kbd><span> - создает логические усиления в тексте</span></li>
+               <li><kbd>&lt;strong&gt;</kbd><span> - подчеркивает важность, серьезность или срочность своего содержимого</span></li>
+               <li><kbd>&lt;small&gt;</kbd><span> - представляет примечания, набранные мелким шрифтом</span></li>
+               <li><kbd>&lt;s&gt;</kbd><span> - представляет содержимое, которое больше не является точным или актуальным</span></li>
+               <li><kbd>&lt;cite&gt;</kbd><span> - представляет ссылку на творческое произведение</span></li>
+               <li><kbd>&lt;q&gt;</kbd><span> - представляет некоторое содержимое, цитируемое из другого источника</span></li>
+               <li><kbd>&lt;dfn&gt;</kbd><span> - используется для выделения термина</span></li>
+               <li><kbd>&lt;abbr&gt;</kbd><span> - представляет аббревиатуру, необязательно с расшифровкой</span></li>
+               <li><kbd>&lt;ruby&gt;</kbd><span> - помечает один или несколько фрагментов текста ruby-аннотациями</span></li>
+               <li><kbd>&lt;rb&gt;</kbd><span> - представляет основные сегменты текста ruby-аннотации</span></li>
+               <li><kbd>&lt;rt&gt;</kbd><span> - используется для разметки аннотации к тексту</span></li>
+               <li><kbd>&lt;rtc&gt;</kbd><span> - помечает вложенный в него текст как дополнительную аннотацию</span></li>
+               <li><kbd>&lt;rp&gt;</kbd><span> - выводит альтернативный текст в случае если браузер не поддерживает элемент &lt;ruby&gt;</span></li>
+               <li><kbd>&lt;data&gt;</kbd><span> - представляет свое содержимое вместе с машиночитаемой формой этого содержимого в атрибуте value</span></li>
+               <li><kbd>&lt;time&gt;</kbd><span> - используется для разметки различных типов дат, времени, смещений часовых поясов и продолжительности</span></li>
+               <li><kbd>&lt;code&gt;</kbd><span> - представляет фрагмент компьютерного кода</span></li>
+               <li><kbd>&lt;var&gt;</kbd><span> - представляет переменную</span></li>
+               <li><kbd>&lt;samp&gt;</kbd><span> - представляет пример вывода из другой программы или устройства</span></li>
+               <li><kbd>&lt;kbd&gt;</kbd><span> - представляет пользовательский ввод</span></li>
+               <li><kbd>&lt;sub&gt; и &lt;sup&gt;</kbd><span> - представляют нижний и верхний индекс</span></li>
+               <li><kbd>&lt;i&gt;</kbd><span> - представляет справочные выделения отдельных слов и фрагментов текста</span></li>
+               <li><kbd>&lt;b&gt;</kbd><span> - выделяет ключевые слова, не отмечая их как важные</span></li>
+               <li><kbd>&lt;u&gt;</kbd><span> - представляет отрывок текста с явно отображаемой нетекстовой аннотацией</span></li>
+               <li><kbd>&lt;mark&gt;</kbd><span> - представляет фрагмент текста, помеченный или выделенный для справочных целей</span></li>
+               <li><kbd>&lt;bdi&gt;</kbd><span> - представляет фрагмент текста, который должен быть изолирован от остального текста для двунаправленного форматирования текста</span></li>
+               <li><kbd>&lt;bdo&gt;</kbd><span> - управляет форматированием направленности текста для дочерних элементов</span></li>
+               <li><kbd>&lt;span&gt;</kbd><span> - представляет свои дочерние элементы.</span></li>
+               <li><kbd>&lt;br&gt;</kbd><span> - представляет разрыв строки</span></li>
+               <li><kbd>&lt;wbr&gt;</kbd><span> - представляет возможность разрыва длинной строки</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part6">
+            <h3><a href="pdf/p6.pdf" target="_blank">6. Правки документа</a></h3>
+            <ul>
+               <li><kbd>&lt;ins&gt;</kbd><span> - представляет добавления к документу</span></li>
+               <li><kbd>&lt;del&gt;</kbd><span> - представляет удаление из документа</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part7">
+            <h3><a href="pdf/p7.pdf" target="_blank">7. Встраиваемое содержимое</a></h3>
+            <ul>
+               <li><kbd>&lt;picture&gt;</kbd><span> - контейнер для множественных источников изображения</span></li>
+               <li><kbd>&lt;source&gt;</kbd><span> - указывает альтернативные источники изображения для элемента &lt;img&gt; или несколько альтернативных медиа-ресурсов для элементов &lt;audio&gt; или &lt;vidio&gt;</span></li>
+               <li><kbd>&lt;img&gt;</kbd><span> - представляет изображение и его резервное содержимое</span></li>
+               <li><kbd>&lt;iframe&gt;</kbd><span> - используется для встраивания другого HTML-документа в текущий</span></li>
+               <li><kbd>&lt;embed&gt;</kbd><span> - используется для отображения внешних ресурсов или интерактивного контента</span></li>
+               <li><kbd>&lt;object&gt;</kbd><span> - представляет внешний ресурс, который будет обрабатываться плагином</span></li>
+               <li><kbd>&lt;param&gt;</kbd><span> - определяет параметры плагинов, вызываемых элементом &lt;object&gt;</span></li>
+               <li><kbd>&lt;video&gt;</kbd><span> - используется для воспроизведения видео или фильмов, а также аудиофайлов с субтитрами</span></li>
+               <li><kbd>&lt;audio&gt;</kbd><span> - представляет звук или аудиопоток</span></li>
+               <li><kbd>&lt;track&gt;</kbd><span> - позволяет явно указывать внешние текстовые ресурсы для медиа-элементов</span></li>
+               <li><kbd>&lt;map&gt;</kbd><span> - определяет изображение-карту</span></li>
+               <li><kbd>&lt;area&gt;</kbd><span> - представляет гиперссылку с некоторым текстом и соответствующей областью на изображении-карте</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part8">
+            <h3><a href="pdf/p8.pdf" target="_blank">8. Ссылки</a></h3>
+            <ul>
+               <li><kbd>&lt;a&gt;</kbd><span> - представляет гиперссылку или якорь</span></li>
+               <li><kbd>&lt;area&gt;</kbd><span> - представляет гиперссылку с некоторым текстом и соответствующей областью на изображении-карте</span></li>
+               <li><kbd>&lt;form&gt;</kbd><span> - представляет гиперссылку, которой можно управлять с помощью интерактивных элементов управления для отправки информации</span></li>
+               <li><kbd>&lt;link&gt;</kbd><span> - элемент для создания ссылок на внешние ресурсы и гиперссылок</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part9">
+            <h3><a href="pdf/p9.pdf" target="_blank">9. Табличные данные</a></h3>
+            <ul>
+               <li><kbd>&lt;table&gt;</kbd><span> - представляет табличные данные</span></li>
+               <li><kbd>&lt;caption&gt;</kbd><span> - добавляет заголовок таблице</span></li>
+               <li><kbd>&lt;colgroup&gt;</kbd><span> - представляет группу из одного или нескольких столбцов таблицы</span></li>
+               <li><kbd>&lt;col&gt;</kbd><span> - представляет один или несколько столбцов в группе столбцов, представленных элементом &lt;colgroup&gt;</span></li>
+               <li><kbd>&lt;tbody&gt;</kbd><span> - представляет блок строк, состоящий из основных данных таблицы</span></li>
+               <li><kbd>&lt;thead&gt;</kbd><span> - представляет блок строк, состоящий из заголовков столбцов таблицы</span></li>
+               <li><kbd>&lt;tfoot&gt;</kbd><span> - представляет блок строк, состоящий из нижних колонтитулов</span></li>
+               <li><kbd>&lt;tr&gt;</kbd><span> - представляет строку ячеек в таблице</span></li>
+               <li><kbd>&lt;td&gt;</kbd><span> - представляет ячейку данных в таблице</span></li>
+               <li><kbd>&lt;th&gt;</kbd><span> - определяет ячейку как заголовок группы ячеек таблицы</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part10">
+            <h3><a href="pdf/p10.pdf" target="_blank">10. Формы</a></h3>
+            <ul>
+               <li><kbd>&lt;form&gt;</kbd><span> - представляет компонент веб-страницы с интерактивными элементы управления для отправки информации</span></li>
+               <li><kbd>&lt;label&gt;</kbd><span> - представляет надпись к элементу управления формы</span></li>
+               <li><kbd>&lt;input&gt;</kbd><span> - представляет поле для ввода данных различных типов</span></li>
+               <li><kbd>&lt;button&gt;</kbd><span> - представляет кнопку</span></li>
+               <li><kbd>&lt;select&gt;</kbd><span> - представляет элемент управления для выбора среди набора параметров</span></li>
+               <li><kbd>&lt;datalist&gt;</kbd><span> - содержит набор элементов &lt;option&gt;, которые представляют допустимые или рекомендуемые значения, доступные для выбора в элементе &lt;input&gt;</span></li>
+               <li><kbd>&lt;optgroup&gt;</kbd><span> - представляет группу элементов &lt;option&gt; с общей надписью</span></li>
+               <li><kbd>&lt;option&gt;</kbd><span> - представляет вариант в элементе &lt;select&gt; или &lt;datalist&gt;</span></li>
+               <li><kbd>&lt;textarea&gt;</kbd><span> - представляет многострочный элемент управления для ввода обычного текста</span></li>
+               <li><kbd>&lt;output&gt;</kbd><span> - представляет контейнер для вывода результатов вычислений или результат действий пользователя</span></li>
+               <li><kbd>&lt;progress&gt;</kbd><span> - представляет виджет, который отображает индикатор выполнения задачи</span></li>
+               <li><kbd>&lt;meter&gt;</kbd><span> - представляет либо скалярное значение в пределах известного диапазона, либо дробное значение</span></li>
+               <li><kbd>&lt;fieldset&gt;</kbd><span> - группирует элементы управления формой и надписи к ним</span></li>
+               <li><kbd>&lt;legend&gt;</kbd><span> - представляет заголовок для остального содержимого родительского элемента &lt;fieldset&gt;</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part11">
+            <h3><a href="pdf/p11.pdf" target="_blank">11. Интерактивные элементы</a></h3>
+            <ul>
+               <li><kbd>&lt;details&gt;</kbd><span> - представляет виджет раскрытия информации</span></li>
+               <li><kbd>&lt;summary&gt;</kbd><span> - представляет заголовок или небольшое пояснение для остального содержимого элемента &lt;details&gt;</span></li>
+               <li><kbd>&lt;dialog&gt;</kbd><span> - представляет диалоговое окно</span></li>
+            </ul>
+         </div>
+
+         <div class="ref" id="part12">
+            <h3><a href="pdf/p12.pdf" target="_blank">12. Скрипты</a></h3>
+            <ul>
+               <li><kbd>&lt;script&gt;</kbd><span> - позволяет включать исполняемый код в документы</span></li>
+               <li><kbd>&lt;noscript&gt;</kbd><span> - используется для отображения альтернативного содержимого</span></li>
+               <li><kbd>&lt;template&gt;</kbd><span> - спользуется для объявления фрагментов HTML-разметки, которые можно клонировать и вставлять в документ с помощью сценария</span></li>
+               <li><kbd>&lt;slot&gt;</kbd><span> - определяет ячейку, представляя назначенные ему узлы, если таковые имеются, или свое содержимое в противном случае</span></li>
+               <li><kbd>&lt;canvas&gt;</kbd><span> - определяет пустую растровую область для рисования</span></li>
+            </ul>
+         </div>
+
+         <footer>
+            <p>2022</p>
+         </footer>
+      </div>
+      <script src="jquery.js-ver=1.12.4.js" tppabs="https://html5book.ru/wp-includes/js/jquery/jquery.js?ver=1.12.4"></script>
+      <script>
+         jQuery(function () {
+            jQuery('body').prepend('<div class="scroll-top"></div>');
+            var scrollButtonEl = jQuery('.scroll-top');
+            scrollButtonEl.hide();
+            jQuery(window).scroll(function () {
+               if (jQuery(window).scrollTop() < 20) {
+                  jQuery('.scroll-top').fadeOut();
+               } else {
+                  jQuery('.scroll-top').fadeIn();
+               }
+            });
+            scrollButtonEl.click(function () {
+               jQuery("html, body").animate({scrollTop: 0}, 300);
+               return false;
+            });
+         });
+      </script>
+   </div>
+   </div>
+</body>
+
+</html>
